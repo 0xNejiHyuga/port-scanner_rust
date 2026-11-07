@@ -5,8 +5,7 @@ use std::net::IpAddr;
 pub fn parse_args() -> (Result<(IpAddr, u16, u16), String>) {
     let args: Vec<String> = std::env::args().collect();
     if args.len() < 4 {
-        println!("Ошибка! Недостаточно аргументов");
-        println!("Использование: {} <IP> <start_port> <end_port>", args[0]);
+        return Err(format!("Использование: {} <IP> <start_port> <end_port>", args[0]));
     }
     // Парсинг
     let ip = match args[1].parse::<IpAddr>() {
