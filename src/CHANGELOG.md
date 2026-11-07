@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 ### Added
-- Красивый ASCII-баннер с ником и отсылкой к Yuri.
+- Красивый ASCII-баннер с никами моей команды.
 
 ## [1.0.1] - 2026-11-07
 ### Added
