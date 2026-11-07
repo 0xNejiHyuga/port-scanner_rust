@@ -10,8 +10,9 @@ fn main() {
     report::greetings();
     // Импортируем cli для работы
 
-    match cli::parse_args() {
-        Ok((ip, start_port, end_port)) => {
+    match cli::parse_args() { 
+        //Парсим аргументы для программы
+        Ok((ip, start_port, end_port)) => { // Если Ок и присылает нам кортеж, то идём дальше
             println!("Scanning {ip} from {start_port} to {end_port}");
             let results = scanner::check_port(ip, start_port, end_port);
             report::print_results(&results);
