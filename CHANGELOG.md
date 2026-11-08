@@ -1,20 +1,20 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
-The format is based on [Keep a Changelog](https://keepachangelog.com/),
-and this project adheres to [Semantic Versioning](https://semver.org/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-- Красивый ASCII-баннер с никами моей команды.
+## [1.2.0] - 2026-11-08
 
-## [1.0.1] - 2026-11-07
 ### Added
-- Модуль `report.rs` для цветного вывода портов.
-- Обработка ошибки при отсутствии аргументов (вместо паники).
+- **Многопоточность:** реализовано параллельное сканирование портов с использованием `std::thread::scope` и каналов `mpsc`. 
+- **База сигнатур:** Добавлен файл `signatures.txt` для определения названий сервисов по номеру порта.
+- **Сортировка:** Результаты сканирования теперь сортируются по возрастанию номера порта перед выводом.
+- **Визуал:** Добавлен красивый ASCII-баннер с никами команды, иконки Nerd Font и итоговая статистика в отчете.
 
 ### Changed
-- Парсинг аргументов теперь возвращает `Result` вместо паники.
+- **Модуль `report.rs`:** Значительно улучшен вывод. Добавлены цветовые акценты (в стиле Dracula), рамки и выравнивание колонок для удобного чтения.
 
 ### Fixed
-- Исправлена ошибка `index out of bounds` при запуске без аргументов.
+- **Переполнение `u16`:** Исправлена ошибка `attempt to add with overflow`, возникавшая при попытке вычислить следующий порт после 65535 (заменено на проверку условия выхода из цикла).
+- **Паника при запуске:** Исправлена ошибка `index out of bounds` при запуске программы без аргументов командной строки (добавлена корректная обработка `Result`).
