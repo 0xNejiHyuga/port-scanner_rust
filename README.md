@@ -21,17 +21,17 @@ git clone https://github.com/0xNejiHyuga/port-scanner_rust.git```
 cd port-scanner_rust
 ```
 3. Build the release version
-  ```bash
-     cargo build --release
-  ```
+```bash
+cargo build --release
+```
 3.Usage
-  ```bash
-  ./target/release/port-scanner_rust <IP> <start_port> <end_port>
-  ```
+```bash
+./target/release/port-scanner_rust <IP> <start_port> <end_port>
+```
 Example:
-  ```bash
-  ./target/release/port-scanner_rust 192.168.1.1 1 1000
-  ```
+```bash
+./target/release/port-scanner_rust 192.168.1.1 1 1000
+```
 View/Screenshots:
 
 
