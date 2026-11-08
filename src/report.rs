@@ -17,7 +17,10 @@ pub fn greetings() -> () {
 
     println!("{}", banner.purple().bold());
 
-    println!("{}", "   󰒍 [ Port Scanner v1.2.0 ]".cyan().bold());
+        println!(
+        "{}", 
+        format!("   󰒍 [ Port Scanner v{} ]", env!("CARGO_PKG_VERSION")).cyan().bold()
+    );
     println!("{}", "   󰒃 [ Author: 0xNejiHyuga and Yuri ]\n".cyan());
 }
 
