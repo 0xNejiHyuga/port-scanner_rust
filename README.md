@@ -19,7 +19,7 @@ A fast and simple TCP port scanner written in Rust. Features a stylish ASCII ban
 ```bash
 git clone https://github.com/0xNejiHyuga/port-scanner_rust.git; cd port-scanner_rust
 ```
-3. Build the release version
+2. Build the release version
 ```bash
 cargo build --release
 ```
