@@ -69,30 +69,23 @@ pub fn check_port(ip: IpAddr, start_port: u16, end_port: u16, signatures: &HashM
 }
 
 pub fn load_signatures() -> HashMap<u16, String> {
-    let mut map: HashMap<u16,String> = HashMap::new();
-    match std::fs::read_to_string("signatures.txt") {
-        Ok(string) => {
-            // Skip # or emtpy line
-            for line in string.lines() {
-                
-                if line.starts_with('#') || line.is_empty() {
-                    continue;
-                }
+    let mut map: HashMap<u16, String> = HashMap::new();
+    
 
-                match line.split_once(':') {
-                    Some((port_str, service_ptr)) => {
-                        if let Ok(port) = port_str.trim().parse::<u16>() {
-                            map.insert(port, service_ptr.trim().to_string());
-                        }
-                    }
-                    None => {} 
+    let file_content = include_str!("signatures.txt");
+
+    for line in file_content.lines() {
+        if line.starts_with('#') || line.is_empty() {
+            continue;
+        }
+        match line.split_once(':') {
+            Some((port_str, service_str)) => {
+                if let Ok(port) = port_str.trim().parse::<u16>() {
+                    map.insert(port, service_str.trim().to_string());
                 }
             }
-        },
-        Err(e) => {
-            println!("Failed to read signatures.txt: {e}");
+            None => {}
         }
     }
     map
-
 }
