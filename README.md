@@ -16,11 +16,12 @@ A fast and simple TCP port scanner written in Rust. Features a stylish ASCII ban
 ### Installation & Build
 1. Clone the repository
 
-   ```bash git clone https://github.com/0xNejiHyuga/port-scanner_rust.git```
+   ```bash
+   git clone https://github.com/0xNejiHyuga/port-scanner_rust.git```
    ```bash
    cd port-scanner_rust
    ```
-2. Build the release version
+3. Build the release version
   ```bash
      cargo build --release
   ```
